@@ -18,20 +18,16 @@ public class MyFrame extends JFrame {
         this.setLayout(new FlowLayout());
         this.setSize(330,160);
         this.setResizable(false);
-
         timeFormat = new SimpleDateFormat("HH:mm:ss.SSS");
         dateFormat = new SimpleDateFormat("E dd.MM.yyyy");
-
         timeLabel = new JLabel();
         timeLabel.setFont(new Font("Helvetica",Font.PLAIN,50));
         timeLabel.setForeground(new Color(0xFFFFFF));
         timeLabel.setBackground(new Color(0x00));
         timeLabel.setOpaque(true);
-
         dateLabel = new JLabel();
         dateLabel.setFont(new Font("Arial",Font.PLAIN,35));
         dateLabel.setOpaque(true);
-
         this.add(timeLabel);
         this.add(dateLabel);
         this.setVisible(true);
@@ -42,17 +38,13 @@ public class MyFrame extends JFrame {
         while(true) {
             time = timeFormat.format(Calendar.getInstance().getTime());
             timeLabel.setText(time);
-
             date = dateFormat.format(Calendar.getInstance().getTime());
             dateLabel.setText(date);
-
             try {
                 Thread.sleep(10);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
         }
-
     }
 }
